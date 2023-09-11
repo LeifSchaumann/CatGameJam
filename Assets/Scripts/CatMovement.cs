@@ -51,7 +51,6 @@ public class CatMovement : MonoBehaviour
             }
         }
         vel.x = Input.GetAxis("Horizontal") * speed;
-
         rb2d.velocity = vel;
         if (vel.x > 0.01)
         {
@@ -61,6 +60,7 @@ public class CatMovement : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
+        animator.SetFloat("run", Mathf.Abs(vel.x));
     }
 
     bool IsGround()//returns true if there is a platform below, false if not
