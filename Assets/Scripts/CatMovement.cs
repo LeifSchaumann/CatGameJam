@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CatMovement : MonoBehaviour
 {
-    //=======Movement Variables========
     public float speed;
     private Rigidbody2D rb2d;
     public float jumpForce;
@@ -12,7 +12,6 @@ public class CatMovement : MonoBehaviour
     public float raycastLength = 0.4f;
     public LayerMask platformLayerMask;
 
-    //==========Animation Variables=======
     public Animator animator;
 
     // Start is called before the first frame update
@@ -26,7 +25,6 @@ public class CatMovement : MonoBehaviour
     void Update()
     {
 
-        //=======Animation Code========
         if (Input.GetKey(KeyCode.G))
         {
             //isItching = switcheroo(isItching);
@@ -39,8 +37,6 @@ public class CatMovement : MonoBehaviour
             //animator.SetBool("Itch", false);
         }
 
-
-        //========Movement Code=======
         Vector2 vel = rb2d.velocity;
         Vector2 normalizedDir = rb2d.velocity.normalized;
         if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
@@ -60,7 +56,13 @@ public class CatMovement : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
+
         animator.SetFloat("run", Mathf.Abs(vel.x));
+
+        if (transform.position.y < -6)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     bool IsGround()//returns true if there is a platform below, false if not
