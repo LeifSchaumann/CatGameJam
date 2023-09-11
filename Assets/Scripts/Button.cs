@@ -5,6 +5,8 @@ using UnityEngine;
 public class Button : MonoBehaviour
 {
     private Animator animator;
+    public Transform fishSpawner;
+    public GameObject fishPrefab;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -15,6 +17,7 @@ public class Button : MonoBehaviour
         if (collision.GetComponent<CatMovement>())
         {
             animator.SetTrigger("press");
+            GameObject fish = Instantiate(fishPrefab, fishSpawner.position, Quaternion.identity);
         }
     }
 }
