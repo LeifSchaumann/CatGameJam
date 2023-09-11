@@ -262,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3923915382387005374}
   - component: {fileID: 1508754313084857323}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wide Sky Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

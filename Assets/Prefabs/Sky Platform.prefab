@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8899351749688363938}
   - component: {fileID: 474855451685227011}
   - component: {fileID: 607017462953649566}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sky Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

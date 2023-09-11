@@ -2026,7 +2026,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8757425351099949918}
   - component: {fileID: 1362446757630938388}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Large Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
