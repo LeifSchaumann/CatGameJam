@@ -106,7 +106,7 @@ MonoBehaviour:
   platformLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  animator: {fileID: 0}
+  animator: {fileID: 5014402901622758265}
 --- !u!95 &5014402901622758265
 Animator:
   serializedVersion: 5
