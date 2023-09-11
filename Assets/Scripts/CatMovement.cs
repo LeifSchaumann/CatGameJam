@@ -56,8 +56,9 @@ public class CatMovement : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
-
-        animator.SetFloat("run", Mathf.Abs(vel.x));
+        if (IsGround()) { animator.SetFloat("run", Mathf.Abs(vel.x)); }
+        else { animator.SetFloat("run", 0); }
+        animator.SetFloat("inTheAir", Mathf.Abs(vel.y));
 
         if (transform.position.y < -6)
         {
