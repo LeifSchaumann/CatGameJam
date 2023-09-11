@@ -17,7 +17,9 @@ public class Button : MonoBehaviour
         if (collision.GetComponent<CatMovement>())
         {
             animator.SetTrigger("press");
-            GameObject fish = Instantiate(fishPrefab, fishSpawner.position, Quaternion.identity);
+            Rigidbody2D fishRb = Instantiate(fishPrefab, fishSpawner.position, Quaternion.identity).GetComponent<Rigidbody2D>();
+            fishRb.angularVelocity = Random.Range(-500.0f, 500.0f);
+            fishRb.velocity = new Vector3(Random.Range(-5f, 5f), Random.Range(-1f, 1f));
         }
     }
 }
