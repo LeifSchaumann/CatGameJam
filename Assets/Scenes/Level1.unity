@@ -216,6 +216,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 962511465510173962, guid: 1dff0c67481fb4376839cd50966b8e09, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2074077375}
+    - target: {fileID: 962511465510173962, guid: 1dff0c67481fb4376839cd50966b8e09, type: 3}
       propertyPath: platformLayerMask.m_Bits
       value: 64
       objectReference: {fileID: 0}
@@ -1417,6 +1421,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2074077375 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5014402901622758265, guid: 1dff0c67481fb4376839cd50966b8e09, type: 3}
+  m_PrefabInstance: {fileID: 256834400}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2092278928
 GameObject:
   m_ObjectHideFlags: 0
