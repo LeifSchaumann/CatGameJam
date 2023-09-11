@@ -359,7 +359,6 @@ GameObject:
   - component: {fileID: 1481607854}
   - component: {fileID: 1481607853}
   - component: {fileID: 1481607852}
-  - component: {fileID: 1481607855}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -495,7 +494,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &1481607854
 Animator:
   serializedVersion: 5
