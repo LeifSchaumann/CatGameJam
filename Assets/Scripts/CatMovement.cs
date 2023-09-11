@@ -11,7 +11,7 @@ public class CatMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public float raycastLength = 0.4f;
     public LayerMask platformLayerMask;
-
+    private bool isGrounded;
     public Animator animator;
 
     // Start is called before the first frame update
@@ -24,30 +24,33 @@ public class CatMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Check if the cat is grounded, update isGrounded
 
-        if (Input.GetKey(KeyCode.G) && (IsGround()))
+        RaycastHit2D groundCheckHit = Physics2D.Raycast(transform.position, Vector2.down, raycastLength, platformLayerMask);
+        if (groundCheckHit.collider != null)
         {
-            
-            animator.SetTrigger("Lick2");
-         
+            isGrounded = true;
         }
-        if (Input.GetKey(KeyCode.T))
+        else
         {
+            isGrounded = false;
+        }
 
-            //animator.SetBool("Itch", false);
-        }
+        // Jumping and horizontal movement
 
         Vector2 vel = rb2d.velocity;
-        Vector2 normalizedDir = rb2d.velocity.normalized;
         if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            if (IsGround())
+            if (isGrounded)
             {
                 vel.y = jumpForce;
             }
         }
         vel.x = Input.GetAxis("Horizontal") * speed;
         rb2d.velocity = vel;
+
+        // Flip X depending on which direction the cat is moving
+
         if (vel.x > 0.01)
         {
             spriteRenderer.flipX = false;
@@ -56,27 +59,32 @@ public class CatMovement : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
-        if (IsGround()) { animator.SetFloat("run", Mathf.Abs(vel.x)); }
-        else { animator.SetFloat("run", 0); }
-        animator.SetFloat("inTheAir", Mathf.Abs(vel.y));
+
+        // Send info to animator
+
+        animator.SetBool("isGrounded", isGrounded);
+
+        if (Mathf.Abs(vel.x) > 0.01 && isGrounded)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
+
+        // Trigger animations
+
+        if (Input.GetKey(KeyCode.G))
+        {
+            animator.SetTrigger("Lick2");
+        }
+
+        // Restart the scene if the cat falls out of bounds
 
         if (transform.position.y < -6)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-    }
-
-    bool IsGround()//returns true if there is a platform below, false if not
-    {
-        Vector2 origin = transform.position;
-        RaycastHit2D platformDown = Physics2D.Raycast(origin, Vector2.down, raycastLength, platformLayerMask);
-        if (platformDown.collider != null)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
         }
     }
 }
