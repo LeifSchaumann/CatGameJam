@@ -25,11 +25,11 @@ public class CatMovement : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.G))
+        if (Input.GetKey(KeyCode.G) && (IsGround()))
         {
-            //isItching = switcheroo(isItching);
+            
             animator.SetTrigger("Lick2");
-            //animator.SetBool("Lick2", false);
+         
         }
         if (Input.GetKey(KeyCode.T))
         {
