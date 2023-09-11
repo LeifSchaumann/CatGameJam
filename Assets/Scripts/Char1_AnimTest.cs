@@ -16,14 +16,16 @@ public class Char1_AnimTest : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.G))
         {
-            animator.SetBool("Lick2", true);
-            animator.SetBool("Lick2", false);
+            //isItching = switcheroo(isItching);
+            animator.SetTrigger("Lick2");
+            //animator.SetBool("Lick2", false);
         }
         if (Input.GetKey(KeyCode.T))
         {
-            animator.SetBool("Itch", true);
-            animator.SetBool("Itch", false);
+            
+            //animator.SetBool("Itch", false);
         }
 
     }
+    
 }
