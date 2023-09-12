@@ -107,9 +107,4 @@ public class CatMovement : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    Debug.Log("Have reached script");
-
-    //}
 }

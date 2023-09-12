@@ -24,6 +24,7 @@ public class MaterialChanger : MonoBehaviour
 
     public void materialChange()
     {
+        Debug.Log("hellooooo");
         GameObject[] objectsToAffect = GameObject.FindGameObjectsWithTag("cloud");
         foreach (GameObject e in objectsToAffect)
         {
