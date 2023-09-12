@@ -9,7 +9,7 @@ public class Button : MonoBehaviour
     public Transform fishSpawner;
     public GameObject fishPrefab;
     public GameObject cam;
-    private GameObject cat;
+    //private GameObject cat;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -17,7 +17,7 @@ public class Button : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {   
-        cat = collision.gameObject;
+        //cat = collision.gameObject;
         if (collision.GetComponent<CatMovement>())
         {
             //button animation
