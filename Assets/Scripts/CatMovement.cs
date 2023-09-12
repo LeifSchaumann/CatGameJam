@@ -87,6 +87,8 @@ public class CatMovement : MonoBehaviour
             idleActionTimerGoal = Random.Range(5f, 15f);
         }
 
+
+
         // Restart the scene if the cat falls out of bounds
 
         if (transform.position.y < -6)
@@ -94,4 +96,9 @@ public class CatMovement : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    Debug.Log("Have reached script");
+
+    //}
 }

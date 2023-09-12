@@ -9,6 +9,7 @@ public class BigFish : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<CatMovement>() != null)
@@ -16,5 +17,6 @@ public class BigFish : MonoBehaviour
             Camera.main.GetComponent<CameraScript>().goCrazy();
             animator.SetTrigger("decompose");
         }
+        
     }
 }
