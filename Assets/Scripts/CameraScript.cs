@@ -6,13 +6,14 @@ public class CameraScript : MonoBehaviour
 {
     public float crazy_meter = 1;
     public float offsetX;
+    private Quaternion desiredRotation;
 
     private Transform player;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        desiredRotation = transform.rotation;
     }
 
     // locks camera's y
@@ -26,13 +27,14 @@ public class CameraScript : MonoBehaviour
         {
             transform.position = pos;
         }
+        transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, 0.01f);
     }
 
     public void goCrazy()
     {
         float newz = transform.rotation.eulerAngles.z + crazy_meter; 
         Quaternion quat = Quaternion.AngleAxis(newz, Vector3.forward);
-        transform.rotation = quat;
+        desiredRotation = quat;
         
         //StartCoroutine(yaaaa());
     }
