@@ -29,8 +29,8 @@ public class Button : MonoBehaviour
             fishRb.velocity = new Vector3(Random.Range(-5f, 5f), Random.Range(-1f, 1f));
 
             //camera starts following cat
-            cam.transform.SetParent(cat.transform, true);
-            cam.transform.position = new Vector3(cat.transform.position.x, cam.transform.position.y, cam.transform.position.z);
+            //cam.transform.SetParent(cat.transform, true);
+            //cam.transform.position = new Vector3(cat.transform.position.x, cam.transform.position.y, cam.transform.position.z);
         }
     }
 }

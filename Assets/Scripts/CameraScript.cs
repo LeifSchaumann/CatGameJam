@@ -5,8 +5,9 @@ using UnityEngine;
 public class CameraScript : MonoBehaviour
 {
     public float crazy_meter = 1;
-    public Transform player;
     public float offsetX;
+
+    private Transform player;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,8 @@ public class CameraScript : MonoBehaviour
     // locks camera's y
     void Update()
     {
+
+        player = GameObject.Find("Player").transform;
         Vector3 pos = transform.position;
         pos.x = player.position.x + offsetX;
         if (player.position.x >= offsetX)
