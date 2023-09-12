@@ -38,5 +38,9 @@ public class CatFeeding : MonoBehaviour
             scoreLabel.text = fishEaten.ToString() + "/5";
             Destroy(collision.gameObject);
         }
+        //if (collision.GetComponent<BigFish>())
+        //{
+        //    
+        //}
     }
 }

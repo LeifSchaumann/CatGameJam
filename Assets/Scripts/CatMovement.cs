@@ -15,6 +15,8 @@ public class CatMovement : MonoBehaviour
     public Animator animator;
     private float idleActionTimer = 0;
     private float idleActionTimerGoal;
+    public bool lickORstrech = true;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -82,7 +84,16 @@ public class CatMovement : MonoBehaviour
         idleActionTimer += Time.deltaTime;
         if (idleActionTimer >= idleActionTimerGoal)
         {
-            animator.SetTrigger("Lick2");
+            if (lickORstrech)
+            {
+                lickORstrech = false;
+                animator.SetTrigger("Lick2");
+            }
+            else
+            {
+                lickORstrech = true;
+                animator.SetTrigger("strech");
+            }
             idleActionTimer = 0;
             idleActionTimerGoal = Random.Range(5f, 15f);
         }
