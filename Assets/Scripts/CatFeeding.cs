@@ -9,6 +9,7 @@ public class CatFeeding : MonoBehaviour
 {
     public int fishEaten = 0;
     public GameObject UI;
+    public GameObject victoryText;
 
     private Label scoreLabel;
     private AudioSource eatSound;
@@ -25,7 +26,8 @@ public class CatFeeding : MonoBehaviour
     {
         if (fishEaten == 5)
         {
-            SceneManager.LoadScene(2);
+            victoryText.GetComponent<SpriteRenderer>().enabled = true;
+            Invoke("ChangeScene", 0.5f);
         }
     }
 
@@ -42,5 +44,9 @@ public class CatFeeding : MonoBehaviour
         //{
         //    
         //}
+    }
+    void ChangeScene()
+    {
+        SceneManager.LoadScene(2);
     }
 }
