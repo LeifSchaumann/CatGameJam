@@ -19,6 +19,7 @@ public class CatFeeding : MonoBehaviour
     {
         if (collision.GetComponent<Fish>())
         {
+            Camera.main.GetComponent<CameraScript>().goCrazy();
             fishEaten++;
             Destroy(collision.gameObject);
         }

@@ -25,9 +25,13 @@ public class CameraScript : MonoBehaviour
         }
     }
 
-    void goCrazy()
+    public void goCrazy()
     {
-        StartCoroutine(yaaaa());
+        float newz = transform.rotation.eulerAngles.z + crazy_meter; 
+        Quaternion quat = Quaternion.AngleAxis(newz, Vector3.forward);
+        transform.rotation = quat;
+        
+        //StartCoroutine(yaaaa());
     }
     IEnumerator yaaaa()
     {
@@ -35,4 +39,5 @@ public class CameraScript : MonoBehaviour
             yield return new WaitForSeconds(.1f);
         
     }
+
 }
