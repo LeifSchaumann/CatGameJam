@@ -13,12 +13,15 @@ public class CatMovement : MonoBehaviour
     public LayerMask platformLayerMask;
     private bool isGrounded;
     public Animator animator;
+    private float idleActionTimer = 0;
+    private float idleActionTimerGoal;
 
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        idleActionTimerGoal = Random.Range(5f, 15f);
     }
 
     // Update is called once per frame
@@ -67,6 +70,7 @@ public class CatMovement : MonoBehaviour
         if (Mathf.Abs(vel.x) > 0.01 && isGrounded)
         {
             animator.SetBool("isRunning", true);
+            idleActionTimer = 0;
         }
         else
         {
@@ -75,9 +79,12 @@ public class CatMovement : MonoBehaviour
 
         // Trigger animations
 
-        if (Input.GetKey(KeyCode.G))
+        idleActionTimer += Time.deltaTime;
+        if (idleActionTimer >= idleActionTimerGoal)
         {
             animator.SetTrigger("Lick2");
+            idleActionTimer = 0;
+            idleActionTimerGoal = Random.Range(5f, 15f);
         }
 
         // Restart the scene if the cat falls out of bounds
