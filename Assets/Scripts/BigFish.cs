@@ -10,6 +10,7 @@ public class BigFish : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        myAudioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
