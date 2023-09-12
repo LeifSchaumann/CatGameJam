@@ -27,7 +27,7 @@ public class CatFeeding : MonoBehaviour
         if (fishEaten == 5)
         {
             victoryText.GetComponent<SpriteRenderer>().enabled = true;
-            Invoke("ChangeScene", 0.5f);
+            Invoke("ChangeScene", 2f);
         }
     }
 
