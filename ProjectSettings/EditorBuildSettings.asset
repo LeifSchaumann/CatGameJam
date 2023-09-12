@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Pixel Platformer/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: f8aa9403aa7c542bba9d6b57699479a0
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 8e631629d10386e4ca5b0df3a7f17343
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: d4772df5ac1154ebb9f97e7508dad792
   m_configObjects: {}
