@@ -1188,8 +1188,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sushiEaten: 0
   sashimiEaten: 0
-  rawEaten: 0
-  victoryText: {fileID: 0}
+  steakEaten: 0
+  UI: {fileID: 1481598096}
+  victoryText: {fileID: 1588320828}
 --- !u!82 &699964975
 AudioSource:
   m_ObjectHideFlags: 0
