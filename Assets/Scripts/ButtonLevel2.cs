@@ -9,10 +9,13 @@ public class ButtonLevel2 : MonoBehaviour
     public GameObject[] prefabs;
     private GameObject randomPrefab;
     private Transform randomSpawn;
+    private AudioSource myAudioSource;
+    public AudioClip buttonSound;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        myAudioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -29,6 +32,9 @@ public class ButtonLevel2 : MonoBehaviour
         {
             //button animation
             animator.SetTrigger("press");
+
+            //button sound
+            myAudioSource.PlayOneShot(buttonSound);
 
             //spawn fish
             Rigidbody2D fishRb = Instantiate(randomPrefab, randomSpawn.position, Quaternion.identity).GetComponent<Rigidbody2D>();

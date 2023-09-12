@@ -35,7 +35,7 @@ public class CatFeeding : MonoBehaviour
         {
             eatSound.Play();
             fishEaten++;
-            scoreLabel.text = fishEaten.ToString();
+            scoreLabel.text = fishEaten.ToString() + "/5";
             Destroy(collision.gameObject);
         }
     }

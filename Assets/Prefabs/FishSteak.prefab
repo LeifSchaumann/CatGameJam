@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6291512164938795049}
   - component: {fileID: 7826512426296207223}
   - component: {fileID: 7279619821035668826}
+  - component: {fileID: 3731728580849267973}
   m_Layer: 7
   m_Name: FishSteak
   m_TagString: Untagged
@@ -148,3 +149,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &3731728580849267973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4342912975775529042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b41773a73e4c445a28c0be002c3bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
