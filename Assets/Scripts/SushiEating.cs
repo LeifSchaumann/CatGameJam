@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class SushiEating : MonoBehaviour
@@ -27,6 +28,7 @@ public class SushiEating : MonoBehaviour
         if (sushiEaten >= 1 && sashimiEaten >= 1 && rawEaten >= 1)
         {
             victoryText.GetComponent<SpriteRenderer>().enabled = true;
+            Invoke("ChangeScene", 2f);
         }
     }
 
@@ -53,5 +55,9 @@ public class SushiEating : MonoBehaviour
             //scoreLabel.text = sushiEaten.ToString();
             Destroy(collision.gameObject);
         }
+    }
+    void ChangeScene()
+    {
+        SceneManager.LoadScene(0);
     }
 }
