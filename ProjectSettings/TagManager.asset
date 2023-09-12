@@ -42,6 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Sky
+    uniqueID: 4051423307
+    locked: 0
   - name: Background
     uniqueID: 1204421997
     locked: 0
@@ -51,9 +54,9 @@ TagManager:
   - name: Platforms
     uniqueID: 4219656915
     locked: 0
-  - name: FrontClouds
-    uniqueID: 3849816475
-    locked: 0
   - name: Player
     uniqueID: 1060024087
+    locked: 0
+  - name: FrontClouds
+    uniqueID: 3849816475
     locked: 0
