@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7809445347465622761}
   - component: {fileID: 1425692328790841689}
   - component: {fileID: -3992398948455070324}
+  - component: {fileID: -3443189534371016823}
   m_Layer: 7
   m_Name: Sushi
   m_TagString: Untagged
@@ -148,3 +149,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &-3443189534371016823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4087743214436596564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a305fe60f84874d806789dcbe240d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
