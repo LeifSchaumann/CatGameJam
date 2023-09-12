@@ -9,10 +9,13 @@ public class Button : MonoBehaviour
     public Transform fishSpawner;
     public GameObject fishPrefab;
     public GameObject cam;
+    private AudioSource myAudioSource;
+    public AudioClip buttonSound;
     //private GameObject cat;
     void Start()
     {
         animator = GetComponent<Animator>();
+        myAudioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,6 +25,9 @@ public class Button : MonoBehaviour
         {
             //button animation
             animator.SetTrigger("press");
+
+            //button sound
+            myAudioSource.PlayOneShot(buttonSound);
 
             //spawn fish
             Rigidbody2D fishRb = Instantiate(fishPrefab, fishSpawner.position, Quaternion.identity).GetComponent<Rigidbody2D>();
